@@ -1,5 +1,6 @@
-// Introduction to string , that is collection of characters
+let name = "Sudhanshu";
 
-let Name = "sudhanshu"; //<--- this is a string
+/*string are used to store a multiple text*/
 
-console.log(Name.length);
+console.log(name[0]);
+console.log(name[1]);
