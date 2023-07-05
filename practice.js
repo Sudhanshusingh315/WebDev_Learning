@@ -1,18 +1,18 @@
-let marks ={
-    sudhanshu:90,
-    nitin:100,
-    krishan:101
-}
 
-
-for(let key in marks)
+function sum_of_these_numbers(a,b)  
 {
-    console.log(key + " has secured " + marks[key] + " in maths exam damn kinda sick tho")
+    let sum = a+b;
+    return sum;
 }
 
-let name_of_the_person = "LeaderOfMeow";
+console.log(sum_of_these_numbers(5,6));
 
-for(let albhabet of name_of_the_person)
-{
-    console.log(albhabet);
+
+const avg_of_two_numbers = (a,b) => {
+    
+    let avg = (a+b)/2;
+    return avg;
 }
+
+console.log(avg_of_two_numbers(5,5));
+

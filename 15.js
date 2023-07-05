@@ -7,8 +7,9 @@
 */ 
 
 
-/*
-Q4  */
+/*Q4 */
 
 let str2 = "Please give Rs 1000"
-let amount =
+let amount = str2.slice(("Pleae give Rs ").length);
+
+console.log(amount);
