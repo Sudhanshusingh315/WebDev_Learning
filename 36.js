@@ -40,3 +40,8 @@ for(let color in liTags)
 }
 
 
+const selectingAll = document.querySelectorAll(".List")
+console.log(selectingAll)
+
+
+const allDivs = document.querySelectorAll("allDivs")
