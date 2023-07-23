@@ -1,0 +1,46 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container
+{
+    width: 300px;
+    height: 300px;
+    background-color: gainsboro;
+    margin: 100px;
+    
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+}
+
+.red{ /*Relative to parent*/
+    position:relative;
+    background-color: red;
+    top: 25%;
+    left: 25%;
+}
+.green{
+    background-color: greenyellow;
+    position: absolute; /*to HTML*/
+    top: 0;
+    left: 0;
+}   
+
+.blue{
+    background-color: blue;
+    position: fixed ;
+    left: 0;
+}
+
+.purple{
+    background-color: rebeccapurple;
+    position: sticky; /*sticky to parent*/
+    top: 15px;
+}
