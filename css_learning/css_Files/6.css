@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+.main{
+    display: flex; /*set to the row by default*/
+    flex-wrap: wrap;
+    /* align-items: /-end;by default it is set to stretch that'swhy thy stretch out */
+    background-color: rgb(81, 184, 184);
+}
+
+.box{
+    
+    padding: 35px;
+    margin: 10px;
+    background-color: rgb(151, 127, 218);
+    font-size: 30px;
+    color: white;
+}
+
+.b2{
+    /* align-self: flex-start; */
+    /* order: 1; */
+    
+    /* flex-grow: 0; */
+    /* flex-shrink: 0; */
+    /* flex-basis: 20%; */
+
+    /* flex: 0 0 20%; */
+}
+
+.b4{
+    /* align-self: center; */
+    /* order: -1; */
+    /* flex-grow: 1; */
+
+}
+
+
+
+
+/* Note */
+
+/*Justify content works in Main axis*/
+/*Align items worksin Cross axis*/ 
+
+/* align-items: first baseline; */
+/*by default it is set to stretch that'swhy thy stretch out*/
