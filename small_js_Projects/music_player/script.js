@@ -13,6 +13,7 @@ const volumeScroller = document.querySelector("#volume-scroller");
 playButton.addEventListener("click", () => {
   playing_audio.play();
   console.log("Song started playing");
+  console.log("Buffer: ",playing_audio.buffered)
 });
 
 pauseButton.addEventListener("click", () => {
@@ -34,3 +35,4 @@ setInterval(() => {
     )}/${Math.floor(playing_audio.duration / 60)}:00 mins`
   );
 }, 1000);
+
