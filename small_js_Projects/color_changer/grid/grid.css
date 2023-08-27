@@ -1,0 +1,40 @@
+#purple{
+    
+    margin: auto;
+    width: 50%;
+    height: 160px;
+    background-color: rebeccapurple;
+    color: white;
+    box-shadow: 2px 5px 19px rgb(61, 2, 56) ;
+    
+}
+
+#blue{
+    
+    margin: auto;
+    width: 50%;
+    height: 160px;
+    background-color: rgb(126, 142, 231);
+    color: white;
+    box-shadow: 2px 5px 19px rgb(8, 1, 48) ;
+}
+
+#grey{
+    
+    margin: auto;
+    width: 50%;
+    height: 160px;
+    background-color: rgb(67, 70, 83);
+    color: white;
+    box-shadow: 2px 5px 19px rgb(52, 50, 63) ;
+}
+
+#green{
+    
+    margin: auto;
+    width: 50%;
+    height: 160px;
+    background-color: rgb(146, 207, 47);
+    color: white;
+    box-shadow: 2px 5px 19px rgb(9, 56, 2) ;
+}
