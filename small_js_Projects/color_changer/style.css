@@ -1,18 +1,21 @@
-*{
-    margin: 0;
-    padding: 0;
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+button{
+    background-color:teal;
+    padding: 15px 12px;
+    font-size: 2em; 
+    cursor:hover;
+    transition: 1s;
+    border-color: white;
+    border-width: 4px;
 }
 
-.nav-center{
-
-    border: solid;
-    border-color: brown;
-}
-
-.nav-links{
-
-    display: grid;
-    border: solid;
-    border-color: blue;
-
+button:hover{
+    background-color: purple;
+    border-radius: 70%;
 }
