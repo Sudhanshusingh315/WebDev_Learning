@@ -1,12 +1,14 @@
 // Constructor functions
 function BankAccount(customerName,balance = 0) {
 
+    // variable in construcotrs is called properties
     this.customerName = customerName;
     this.accountNumber = Date.now();
-    this.balance = balance;
+    this.balance = Number(balance);
 
+    // functions inside a constructor is called method
     this.deposit = function(amount){
-        this.balance += amount;
+        this.balance += Number(amount);
     };
     
     this.wtihdraw = (amount)=>{
@@ -33,6 +35,7 @@ const deposit = document.querySelector('#depositeform'); /*form*/
 const accountNumberOfTheUser = document.querySelector("#accountName");
 const amounttodeposite = document.querySelector("#deposite")
 
+// dyanmically creating an account
 
 accuntform.addEventListener('submit',(e)=>{
     e.preventDefault();
@@ -46,18 +49,19 @@ accuntform.addEventListener('submit',(e)=>{
 
 });
 
+// dynamically depsiting an ammount
 
 deposit.addEventListener('submit',(e)=>{
 
     e.preventDefault();
     const found = accountInformation.find((user) =>user.accountNumber === +accountNumberOfTheUser.value );
     
-    console.log(typeof(+amounttodeposite));
-    found.deposit(+amounttodeposite);
+    console.log(typeof(+amounttodeposite.value));
+    found.deposit(+amounttodeposite.value);
     // found.deposit(+amounttodeposite.value);
     // newinfo.deposit(+amounttodeposite)
 
-    console.log(accountInformation)
+    console.log(accountInformation);
 
 });
 
