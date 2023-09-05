@@ -1,4 +1,5 @@
 // Constructor functions
+
 function BankAccount(customerName,balance = 0) {
 
     // variable in construcotrs is called properties
