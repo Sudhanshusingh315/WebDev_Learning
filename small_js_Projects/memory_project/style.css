@@ -1,0 +1,24 @@
+#grid{
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    min-height: 50vh ;
+    row-gap:2px;
+    column-gap: 2px;
+    width: 310px;
+    border: solid 4px black;
+    margin-left: 150px;
+    
+ 
+}
+
+h2{
+    border: solid 2px palegreen;
+}
+
+img{
+    margin: auto; 
+    width: 102px;
+    height: 100px;
+
+}
