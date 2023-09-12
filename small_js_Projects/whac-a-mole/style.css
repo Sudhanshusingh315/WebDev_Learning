@@ -1,0 +1,25 @@
+#grid{
+    display: grid;
+    grid-template-columns: repeat(3,3fr);
+    row-gap: 40px; 
+}
+.square{
+    width: 232px;
+    height: 172px;
+    margin: auto;
+    border-style: solid;
+}
+
+.mole{
+    background-color: aquamarine;
+}
+
+#start{
+    font-weight: bolder;
+    font-style: oblique;
+    font-size: 40px;
+    padding: 4px 4px 4px 4px;
+    border-radius: 12px;
+    box-shadow: pink 2px 3px 5px;
+
+}
