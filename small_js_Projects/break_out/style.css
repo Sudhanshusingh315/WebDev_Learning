@@ -9,5 +9,21 @@
     position:absolute;
     width: 100px;
     height: 20px;
-    background-color: blueviolet;
+    background-color: rgb(175, 107, 238);
+}
+
+.user{
+    position:absolute;
+    width: 100px;
+    height: 20px;
+    background-color: rgb(225, 143, 143);
+}
+
+.ball{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid blue;
+    border-radius: 10px;
+    background-color: aqua;
 }
