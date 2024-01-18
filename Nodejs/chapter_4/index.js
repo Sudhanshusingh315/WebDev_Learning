@@ -1,13 +1,13 @@
 const fs = require('fs');
 const express = require('express');
-const morgan = require('morgan');
-const { execSync } = require('child_process');
 const port = 8080;
 
 const products = JSON.parse(fs.readFileSync("../chapter_3/data.json","utf-8"));
 const data = products.products;
 
 const server = express();
+
+//body parser
 server.use(express.json());
 // Read Get all the products
 
