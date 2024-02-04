@@ -1,4 +1,5 @@
 require("dotenv").config("../.env");
+const cookieParser = require("cookie-parser");
 const express = require("express");
 const mongoose = require("mongoose");
 const uri =
@@ -17,6 +18,7 @@ async function main() {
 // middleware
 app.use(express.static("public"));
 app.use(express.json());
+app.use(cookieParser());
 
 // view engine
 app.set("view engine", "ejs");
@@ -25,6 +27,16 @@ app.set("view engine", "ejs");
 // routes
 app.get("/", (req, res) => res.render("home"));
 app.get("/smoothies", (req, res) => res.render("smoothies"));
+
+// Cookies
+
+app.get("/set-cookies", (req, res) => {
+  res.cookie("Set-cookie", "newUser=true");
+  res.send("you got cookies");
+});
+
+app.get("/get-cookies", (req, res) => {});
+
 app.use(authRouter);
 
 app.listen(port, () => {
