@@ -1,0 +1,44 @@
+.container {
+  border: 2px solid rgb(11, 1, 20);
+  display: flex;
+  height: 200vh;
+  /* gaps maintained rhete hai */
+  position: relative;
+}
+.box1 {
+  width: 300px;
+  height: 300px;
+  background-color: red;
+  margin: 4px;
+}
+.box2 {
+  width: 300px;
+  height: 300px;
+  background-color: green;
+  margin: 4px;
+  top: 100px;
+  left: 100px;
+  position: absolute;
+}
+.box3 {
+  width: 300px;
+  height: 300px;
+  background-color: blue;
+  margin: 4px;
+  top: 150px;
+  left: 150px;
+  position: sticky;
+}
+.box4 {
+  width: 300px;
+  height: 300px;
+  background-color: orange;
+  margin: 4px;
+  top: 200px;
+  left: 200px;
+  position: absolute;
+}
+.box {
+  background-color: rgb(204, 18, 96);
+  height: 1000px;
+}
