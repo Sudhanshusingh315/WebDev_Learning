@@ -13,6 +13,9 @@ exports.createUser = async (req, res) => {
 // This is getting info on my user
 exports.getMyUser = async (req, res) => {
   const id = req.query.id;
-  const user = await User.find({ _id: id }).populate("posts");
+  const user = await User.find({ _id: id }).populate({
+    path: "posts",
+    select: ["title", "content"],
+  });
   res.send(user);
 };
