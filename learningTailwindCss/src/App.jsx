@@ -16,9 +16,9 @@ function App() {
           <li>Pricing</li>
         </ul>
       </nav>
-      <div className="bg-purple-300 flex justify-between items-center">
+      <div className="bg-purple-300 flex justify-between items-center rounded-t-lg">
         <div className="left pl-10">
-          <h1 className="text-purple-900 font-bold text-6xl">
+          <h1 className="text-purple-900 font-bold text-6xl ">
             Best cat food in the town
           </h1>
           <p>
@@ -35,9 +35,15 @@ function App() {
           </div>
         </div>
         <div className="right">
-          <img src={meow_pic} className="" />
+          <img src={meow_pic} className="shadow-sm" />
         </div>
       </div>
+      <h1 className="font-sans font-bold text-8xl text-red-950 mb-2">Meow does purr, how is my furr?</h1>
+      <h2 className="font-mono font-semibold text-7xl text-red-800 mb-2">Meow does purr, how is my furr?</h2>
+      <h3 className="font-serif font-thin text-6xl text-red-700 mb-2">Meow does purr, how is my furr?</h3>
+      <h4 className="font-thin font-light text-5xl text-red-500 mb-2">Meow does purr, how is my furr?</h4>
+
+
     </>
   );
 }
