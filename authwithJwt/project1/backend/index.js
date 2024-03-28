@@ -1,6 +1,7 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-require("dotenv").config();
+const cookieParser = require("cookie-parser");
 const userRouter = require("./Routes/userRoutes");
 const port = 5000;
 const app = express();
@@ -14,6 +15,11 @@ async function main() {
   );
   console.log("mongoose connected");
 }
+
+// cookie parser middleware 
+app.use(cookieParser());
+
+
 // user Auth router
 app.use("/api/user", userRouter.router);
 
