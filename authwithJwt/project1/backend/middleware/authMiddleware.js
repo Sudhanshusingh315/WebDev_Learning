@@ -13,6 +13,7 @@ const protect = async function (req, res, next) {
       try{
         const decoded  = jwt.verify(token,process.env.JWT_SECRET);
         console.log("decoed token from authMiddleware",decoded);
+        // also setting in the req object so that i can acceess it anywhere and at anytime i want
         req.user = await User.findById(decoded.userId).select('-password'); 
         next();
       }catch(err){
