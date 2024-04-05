@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export default function Login() {
-  const { userInfo, error,isLoading } = useSelector((state) => state.user);
+  const { userInfo, error ,isLoading } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [login, setLogin] = useState({});
@@ -19,9 +19,12 @@ export default function Login() {
     e.preventDefault();
     console.table(login);
     // dispatach the login state
-    dispatch(loginUser(login));
+    dispatch(loginUser(login)).then(res =>{
+      console.log("this is after the dispatch",res);
+    });
   };
 
+  // this is an astute way of dealing with logins
   useEffect(() => {
     if (userInfo) {
       navigate("/");
@@ -52,7 +55,7 @@ export default function Login() {
         />
       </FormControl>
       <div>
-        Don&apos;t have an account? <Link to="/register">Sing up</Link>
+        Don&apos;t have an account? <Button colorScheme="pink"><Link to="/register">Sing up</Link></Button>
       </div>
       <Button
         colorScheme="blue"

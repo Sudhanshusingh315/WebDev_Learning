@@ -7,7 +7,7 @@ export const loginUser = createAsyncThunk(
       const response = await axios.post("/api/user/auth", userCredentials);
       return response.data;
     } catch (err) {
-      console.log("this is comming from err",err)
+      console.log("this is comming from err", err);
       return rejectWithValue(err.resonse.data);
     }
   }
@@ -37,6 +37,7 @@ export const registerUser = createAsyncThunk(
 
 const initialState = {
   // if there is anything is the localstorage? if there is set that to userInfo state, other wise put null
+  // this initialstate matters a lot and this is what handles everythign since this is going to decide everything
   userInfo: localStorage.getItem("userInfo")
     ? JSON.parse(localStorage.getItem("userInfo"))
     : null,
@@ -58,6 +59,8 @@ export const userSlice = createSlice({
     builder
       .addCase(loginUser.fulfilled, (state, action) => {
         state.userInfo = action.payload;
+        state.isLoading = false;
+        state.error = null;
         if (action.payload) {
           localStorage.setItem("userInfo", JSON.stringify(action.payload));
         }
@@ -88,7 +91,7 @@ export const userSlice = createSlice({
         localStorage.setItem("userInfo", JSON.stringify(action.payload));
       })
       .addCase(registerUser.rejected, (state, action) => {
-        console.log("comming from rejected value",action.payload);
+        console.log("comming from rejected value", action.payload);
         state.error = action.payload.Error;
         state.isLoading = false;
       });
