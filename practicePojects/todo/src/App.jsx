@@ -24,6 +24,14 @@ function App() {
           return <li key={`key-${index}`}>{items.liValue}</li>
         })}
       </div>
+
+      <form onClick={()=>{alert("i'm form")}}>
+        what is this?
+
+        <div onClick={()=>{alert("i'm a div")}}>
+          i'm a div
+        </div>
+      </form>
     </>
   )
 }
