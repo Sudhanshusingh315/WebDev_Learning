@@ -10,15 +10,20 @@ function App() {
   const [seconds, setSeconds] = useState(0);
   const [timerId, setTimerId] = useState(0)
 
+  const resetTime = () => {
+    setHour(0);
+    setMinute(0);
+    setSeconds(0);
+  }
 
   const handlePause = () => {
     setIsPaused(true);
     clearInterval(timerId);
   }
 
-  const handleResume = () =>{
+  const handleResume = () => {
     setIsPaused(false);
-    runTimer(seconds,minute,hour,timerId);
+    runTimer(seconds, minute, hour, timerId);
   }
 
   const handleStart = () => {
@@ -32,6 +37,7 @@ function App() {
   const handleReset = () => {
     clearInterval(timerId)
     setStart(false);
+    resetTime()
   }
 
   const runTimer = (sec, min, hr, tid) => {
@@ -46,9 +52,7 @@ function App() {
       setSeconds(59);
     }
     if (hr === 0 && sec === 0 && min === 0) {
-      setHour(0);
-      setMinute(0);
-      setSeconds(0);
+      resetTime();
       clearInterval(tid);
     }
   }
