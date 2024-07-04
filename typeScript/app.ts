@@ -51,4 +51,6 @@
 // }
 
 
-type ID = number;
+type ID = number | string;
+
+const userId:ID = "userID"
