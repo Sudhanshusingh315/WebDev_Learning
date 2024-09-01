@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: lightblue;
+    text-align: center;
+}
+.wrapper{
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid lightblue;
+}
+
+img{
+    transform:rotate()
+}
