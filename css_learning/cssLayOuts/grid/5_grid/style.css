@@ -1,0 +1,43 @@
+.container{
+    display: grid;
+    max-width: 960px;
+    margin: 0 auto;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,minmax(200px,auto));
+    gap: .5rem;
+}
+
+.container > div{
+    background-color: lightskyblue;
+    padding: 30px;
+}
+
+.container > div:nth-child(even){
+    background-color: gray;
+    padding: 30px;
+}
+
+.nested{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+    place-items: center;
+}
+
+.nested > p {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border: 2px solid white;
+    width: 100%;
+    height: 100%;
+}
+.nested>p:nth-child(odd) {
+    color: white;
+    background-color: lightcoral;
+}
+
+.nested>p:nth-child(even) {
+    color: white;
+    background-color: lime;
+}
