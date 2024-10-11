@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+
+.grid-conatiner{
+    display: grid;
+    /* max-width: 100%; */
+    width: 100%; 
+    margin: 1rem padding;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+}
+
+.banner{
+    display: flex;
+    grid-column: 1/4;
+}
+
+.banner > img{
+    width: 45rem;
+    height: 400px;
+}
+.banner > div > h2 {
+    width: 20rem;
+    font-size: 3rem;
+    margin-left: 2rem;
+    border-bottom: 1px solid white;
+}
+
+.banner > div > p {
+    width: 90%;
+    font-size : larger; 
+    font-weight: bold;
+    font-style: italic;
+    color: green;
+    text-wrap: balance;
+    padding-left: 1rem;
+    margin-top: 1rem;
+    align-content: center;
+}
+.banner > div{
+    color: white;
+    background-color: black;
+    margin-left: 2rem;
+}
+
+/* Small grid One*/
+.small-grid-one {
+    width: 100%;
+    color:white;
+    grid-row: 2/4;
+    height: 500px;
+}
+.small-grid-one > img{
+    border: 2px solid whitesmoke;
+    width: 100%;
+    height: 350px;
+
+}
+
+.small-grid-one > div> h3{
+    width: 35%;
+    font-size: 2rem;
+    border-bottom: 1px solid greenyellow;
+    margin-bottom: 1rem;
+}
+
+.small-grid-one > div > p{
+    margin: 1rem;
+    color: green;
+    font-style: italic;
+    font-size: large;
+}
+
+.small-grid-two{
+
+    width: 100%;
+    color:white;
+    grid-row: 2/4;
+    height: 500px;
+}
+.small-grid-two > img{
+    border: 2px solid white;
+    width: 100%;
+    height: 350px;
+}
+
+
+.small-grid-two > div> h3{
+    width: 35%;
+    font-size: 2rem;
+    border-bottom: 1px solid greenyellow;
+    margin-bottom: 1rem;
+}
+
+.small-grid-three > div> h3{
+    width: 35%;
+    font-size: 2rem;
+    border-bottom: 1px solid greenyellow;
+    margin-bottom: 1rem;
+}
+.small-grid-three> div > p{
+    margin: 1rem;
+    color: green;
+    font-style: italic;
+    font-size: large;
+}
+.small-grid-three{
+    
+    width: 100%;
+    color:white;
+    grid-row: 2/4;
+    height: 500px;
+}
+
+
+.small-grid-three > img{
+    width: 100%;
+    height: 350px;
+    border: 2px solid white;
+}
+
+
