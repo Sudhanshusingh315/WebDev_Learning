@@ -3,8 +3,8 @@
   --clr-accent-400: hsl(12, 88%, 59%);
   --clr-accent-100: hsl(13, 100%, 96%);
   --clr-primary-400: rgb(36, 45, 82);
-  --clr-neutral-100: hsl(232, 12%, 13%);
-  --clr-neutral-900: hsl(0, 0%, 0%);
+  --clr-neutral-900: hsl(232, 12%, 13%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
 
   /* setting up fonts */
   --ff-primary: "Be Vietnam Pro", sans-serif;
@@ -198,4 +198,33 @@ textarea:not([rows]) {
 }
 .fs-600 {
   font-size: var(--fs-600);
+}
+
+
+
+/* General */
+body{
+  font-size: var(--fs-body);
+  font-family: var(--ff-body);
+  color: var(--clr-primary-400);
+}
+
+.container{
+  --max-width:1110px;
+  --padding:1rem;
+   
+  width: min((var(--max-width),100%));
+  margin-inline: auto;
+}
+
+.even-columns{
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 50em ) {
+  .even-columns{
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  }  
 }

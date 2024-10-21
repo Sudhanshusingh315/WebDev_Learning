@@ -25,7 +25,7 @@ function register() {
         }, 2000);
     })
 }
-  function getUserData() {
+  function getUseDatanigger() {
     return new Promise((resolve, reject)=>{
         
         setTimeout(() => {
@@ -36,14 +36,12 @@ function register() {
 }
   function displayUserData() {
     return new Promise((resolve, reject)=>{
-
         setTimeout(() => {
           console.log("user data displayed");
           resolve();
         }, 3000);
     })
 }
-
 
 async function authentication() // async is itself returns promise to you can still use .then() in authenticaiton().then()
 {
