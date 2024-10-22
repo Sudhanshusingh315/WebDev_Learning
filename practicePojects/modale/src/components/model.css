@@ -1,0 +1,11 @@
+.container{
+    background-color: red;
+    border: 2px solid black;
+    display: flex;
+    width: 50%;
+    height: 10rem;
+    margin: 0 auto;
+    position: absolute;
+    top:50%;
+    left: 20%;
+}

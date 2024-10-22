@@ -1,0 +1,313 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "zN7J4HWPrn8-gzounFilY",
+      "type": "text",
+      "x": 551,
+      "y": 179,
+      "width": 110.83988952636719,
+      "height": 75,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 99838971,
+      "version": 45,
+      "versionNonce": 321391029,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1711517593776,
+      "link": null,
+      "locked": false,
+      "text": "Flow of jwt\n\n",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 68,
+      "containerId": null,
+      "originalText": "Flow of jwt\n\n",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "JmmZCVfZufoEoGtPRBn9i",
+      "type": "text",
+      "x": 526,
+      "y": 283,
+      "width": 451.199462890625,
+      "height": 325,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1901398485,
+      "version": 366,
+      "versionNonce": 388443259,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "id": "Ka-_zemvXsLJyJhqrnvbb",
+          "type": "arrow"
+        }
+      ],
+      "updated": 1711517731154,
+      "link": null,
+      "locked": false,
+      "text": "Set up the server and connect to mongoose\n\n\n\ncreate the user routes\n\n\nDURING registration use the for the cookie \ndo the same when LOGGING IN \n\nset the token in the cookie that is httpOnly\n\nand use the authMiddleware to protect is",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 318,
+      "containerId": null,
+      "originalText": "Set up the server and connect to mongoose\n\n\n\ncreate the user routes\n\n\nDURING registration use the for the cookie \ndo the same when LOGGING IN \n\nset the token in the cookie that is httpOnly\n\nand use the authMiddleware to protect is",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "Ka-_zemvXsLJyJhqrnvbb",
+      "type": "arrow",
+      "x": 604,
+      "y": 209,
+      "width": 2.97141591925606,
+      "height": 56,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "seed": 331396405,
+      "version": 49,
+      "versionNonce": 1008854299,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1711517731155,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          2.97141591925606,
+          56
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": {
+        "elementId": "JmmZCVfZufoEoGtPRBn9i",
+        "focus": -0.5765928154638542,
+        "gap": 18
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "XxhnoFTPq6OX9clMl_aHp",
+      "type": "arrow",
+      "x": 611,
+      "y": 314,
+      "width": 2,
+      "height": 53,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "seed": 417738875,
+      "version": 15,
+      "versionNonce": 591245973,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1711517721758,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          53
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "WFr49Xz3kiVDGW38Gn-7w",
+      "type": "arrow",
+      "x": 774,
+      "y": 407,
+      "width": 6,
+      "height": 47,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "seed": 1786025973,
+      "version": 16,
+      "versionNonce": 444457627,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1711517724809,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          47
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "4d-hfZFPK_bWMiAK88hKR",
+      "type": "arrow",
+      "x": 892,
+      "y": 491,
+      "width": 1,
+      "height": 33,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "seed": 729601851,
+      "version": 9,
+      "versionNonce": 1510589333,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1711517728358,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          33
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "piWRCrR_azSQR9kEHSUsS",
+      "type": "arrow",
+      "x": 954,
+      "y": 562,
+      "width": 2,
+      "height": 38,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "seed": 1823884149,
+      "version": 21,
+      "versionNonce": 534445627,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1711517735242,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          38
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}

@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+div > ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+div > ul > li {
+    position: relative;
+}
+
+.sub-menu{
+    display: none;
+    list-style: none;
+    width: 120px;
+    position:absolute;
+    top: 1rem;
+}
+
+.sub-menu > li{
+    width: 120px;
+    padding-top: 1rem;
+    background-color: gray;
+    margin-top: 10px;
+    color: white;
+    border: 2px solid red;
+    margin-left: 2rem;
+    margin-right: 5rem;
+
+}
+
+
+div > ul > li:hover .sub-menu{
+    display: block;
+}
+
+

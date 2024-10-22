@@ -1,0 +1,23 @@
+.container{
+    display: grid;
+    /* grid-template-columns: 30% 20% 50%; */
+    /* grid-template-columns: 1fr 2fr 1fr; */
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows:repeat(3,minmax(200px,auto)); 
+    gap: 1rem;
+    grid-auto-rows: 200px;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.container > div{
+    background-color: lightskyblue;
+    padding: 30px;
+    border: 2px solid black;
+    border-radius: .5rem;
+}
+
+.container > div:nth-child(even){
+    background-color: gray;
+    padding: 30px;
+}

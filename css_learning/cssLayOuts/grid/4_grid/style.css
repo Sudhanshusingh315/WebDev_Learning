@@ -1,0 +1,34 @@
+.container{
+    display: grid;
+    max-width: 960px;
+    margin: 0 auto;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(4,minmax(200px,auto));
+    gap: .5rem;
+}
+
+.container > div{
+    background-color: lightskyblue;
+    padding: 30px;
+}
+
+.container > div:nth-child(even){
+    background-color: gray;
+    padding: 30px;
+}
+
+.one{
+    /* grid-column-start: 1;
+    grid-column-end: 3; */
+    grid-column: 1/4;
+}
+
+.two {
+    grid-column: 4/6;
+}
+
+.three {
+    grid-column: 1/4;
+    grid-row: 2/4;
+}
+

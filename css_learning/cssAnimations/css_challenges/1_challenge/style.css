@@ -1,0 +1,31 @@
+body{
+    min-height: 100vh;
+}
+
+.container{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    font-weight: bold;
+    font-size: 32px;
+    padding:3rem;
+    border-image: linear-gradient(to right, yellow 0%, purple 100%) 1;    
+    border-radius: 5px;
+    border-width: 10px;
+    border-style: solid;
+    cursor:  pointer;
+    transition: all 300ms ease-in-out;
+    background-color: #333;
+    color: rgb(187, 184, 184);
+}
+
+.btn:hover{
+    transform: scale(1.4);
+    border-image: linear-gradient(to right, purple 0%, yellow 100%) 1;    
+    color: white;
+}
+

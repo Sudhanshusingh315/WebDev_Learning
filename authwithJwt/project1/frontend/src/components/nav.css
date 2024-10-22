@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  background: gray;
+}
+
+.right {
+  border: 2px solid red;
+  font-style: italic;
+  font-size: 2rem;
+  background-color: #fff;
+}
+
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  border: 2px solid red;
+}
+.signIn {
+  color: white;
+  border: 2px solid black;
+  background-color: rgb(240, 72, 72);
+  outline: none;
+  padding: 1rem;
+  font-size: larger;
+  font-weight: bold;
+}
+.singIn:hover {
+  background-color: rgb(241, 85, 85);
+  cursor: pointer;
+}
+
+.signOut {
+  color: white;
+  border: 2px solid black;
+  background-color: rgb(72, 240, 80);
+  outline: none;
+  padding: 1rem;
+  font-size: larger;
+  font-weight: bold;
+}
+.signOut:hover {
+  background-color: rgb(126, 245, 102);
+  cursor: pointer;
+}
+
