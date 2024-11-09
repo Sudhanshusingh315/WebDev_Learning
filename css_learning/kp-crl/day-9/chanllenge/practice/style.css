@@ -1,0 +1,25 @@
+header{
+    display: flex;
+    border: 2px solid red;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-1,.nav-2{
+    display: flex;
+    border: 2px solid blue;
+}
+
+.nav-1{
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
