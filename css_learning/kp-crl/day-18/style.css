@@ -1,0 +1,140 @@
+/* all my fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* 
+    font-family: "Playfair Display", serif;
+    font-family: "Roboto", serif;
+*/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+h1,
+h2 {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    line-height: 1.1;
+}
+
+section {
+    max-width: 1128px;
+    margin: 0 auto;
+    padding: 3em 1em;
+}
+
+.section-one {
+    width: 95%;
+    max-width: 1128px;
+    margin: 0 auto;
+    background-color: #f3eed9;
+}
+
+.container {
+    width: 95%;
+    margin-inline: auto;
+    min-height: 200px;
+}
+.container__title {
+    font-family: "Roboto", serif;
+    font-size: clamp(0.5rem, 3vw, 1.2rem);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+}
+.container__text {
+
+    max-width: 100%;
+    font-size: clamp(1.5rem,10vw,5rem); 
+    text-align: center;
+    color: #824936;
+}
+
+.section-two {
+    background-color: #ffffff;
+}
+
+.section-two__subheading {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(1.87rem, 3vw, 2rem);
+    color: #824936;
+    font-weight: bold;
+}
+.section-two__row {
+    width: 100%;
+    padding: 1em;
+    font-family: "Roboto", serif;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.section-three { background-color: #222C2A;
+    color: white;
+}
+.section-three__row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: .5em;
+}
+
+.section-three__title{
+    color: #F3EED9;
+    margin-bottom: .5em;
+}
+
+.section-four{
+    background-color: #824936;
+}
+
+.section-four__row{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.section-four__title{
+    color: #F3EED9;
+    margin-bottom: .5em;
+}
+
+
+
+@media (min-width:800px){
+    .section-two__row,.section-three__row,.section-four__row{
+        flex-direction: row;
+    }
+    .section-two__row>div{
+        flex-grow: 1;
+    }
+    .section-three__row>div{
+        width: 50%;
+    }
+    .section-three_col-1{
+        align-self: flex-start;
+    }
+    .section-four__row>div{
+        width: 50%;
+    }
+    .section-four_col-1{
+        align-self: flex-start;
+    }
+}

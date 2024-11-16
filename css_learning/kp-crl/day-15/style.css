@@ -1,0 +1,30 @@
+.container{
+    border: 2px solid slategray;
+    width: 70%;
+    height: 500px;
+    background-color: lightblue;
+    margin-inline:auto ;
+}
+
+/* this is for the viewport width */
+/* any time the width in minimum width 600px or more */
+/* max-width is used for desktop first */
+@media (min-width:600px) {
+    .container{
+        background-color: lightcoral;
+    }
+
+}
+
+@media (min-width:800px) {
+    .container{
+        background-color: orangered;
+    }
+}
+
+
+
+/* any time the width in 600px or smaller*/
+/* min-width is used for mobile first */
+@media (max-width:600px) {
+}
