@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* 
+.roboto-mono-<uniquifier> {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+*/
+.container{
+  width: 90%;
+  max-width: 1120px;
+  margin:0 auto;
+}
+
+.logo{
+  transform: scale(2);
+}
+
+.header{
+  font-family: "Roboto Mono";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 1em;
+  letter-spacing: 1.2;
+  margin-bottom: .5em;
+  background-color: whitesmoke;
+}
+
+
+.navigation-info-left,
+.navigation-info-right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  font-weight: bold;
+}
+
+.navigation-different{
+  color: #0000ff;
+}
+
+
+.main-one-container{
+  width: 90%;
+  max-width: 1120px;
+  margin:0 auto;
+  position: relative;
+}
+
+.main-one-container-title{
+  color: #ff764d;
+  font-weight: bold;
+  font-family: 'Roboto Mono';
+  font-size: 7em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: fit-content;
+}
+
+
+.main-two-container{
+  width: 70%;
+  max-width: 900px;
+  margin:5em auto;
+  
+}
+
+.main-two-container-heading{
+  font-size: 2rem;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+}
+
+span{
+  color: #0000ff;
+}
