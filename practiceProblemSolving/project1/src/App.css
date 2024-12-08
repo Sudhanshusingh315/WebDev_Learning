@@ -42,6 +42,8 @@
 
 .navigation-different{
   color: #0000ff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 
@@ -56,7 +58,7 @@
   color: #ff764d;
   font-weight: bold;
   font-family: 'Roboto Mono';
-  font-size: 7em;
+  font-size: clamp(3em,10vw,10em);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -73,7 +75,7 @@
 }
 
 .main-two-container-heading{
-  font-size: 2rem;
+  font-size:clamp(1em,2vw,2rem) ;
   line-height: 1.1;
   margin-bottom: 1.2rem;
 }

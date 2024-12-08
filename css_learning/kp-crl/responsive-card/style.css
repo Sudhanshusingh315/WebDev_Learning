@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* here the image is defining the widht of the parent, and we have min-content that makes it occupy
+  minimum space as much as possible, so if it is going to take min space and we have withd 100%, it's gonig to 
+  collapse and take zero space*/
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  body {
+    color: white;
+  }
+  .containt-grid {
+    display: grid;
+    width: 90%;
+    max-width: 1128px;
+    margin: 5rem auto;
+  }
+  
+  .containt-grid > * {
+  }
+  
+  .card-front__bg {
+    max-width: revert;
+  }
+  
+  .card-back__bg {
+    max-width: revert;
+  }
+  
+  .card-preview {
+    position: relative;
+    min-height: 400px;
+  }
+  
+  .card-front {
+    --card-padding: 2rem;
+  
+    width: min-content;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  /* this is selecting everythig but the background feImage */
+  .card-front > *:not(.card-front__bg) {
+    position: absolute;
+  }
+  
+  .card-back {
+    width: min-content;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .card-back > *:not(.card-back__bg) {
+    position: absolute;
+  }
+  
+  .card-front__number {
+    font-size: 1.925rem;
+    top: 50%;
+    left: var(--card-padding);
+  }
+  
+  .card-front__name {
+    text-transform: uppercase;
+    bottom: 2rem;
+    left: var(--card-padding);
+  }
+  
+  .card-front__expiry {
+    bottom: 2rem;
+    right: 2rem;
+  }
+  
+  .card-front__logo {
+    top: 2rem;
+    left: var(--card-padding);
+  }
+  
+  .card-back__cvc {
+    top: 45%;
+    right: 3.5rem;
+  }
+  
+  @media (min-width: 960px) {
+    .containt-grid {
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .card-preview {
+      display: grid;
+      gap: 2rem;
+    }
+    .card-front,
+    .card-back {
+      position: relative;
+    }
+  
+    .card-back {
+      margin-left: auto;
+    }
+  }
+  
