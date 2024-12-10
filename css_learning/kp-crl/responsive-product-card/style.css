@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* setting custom properties */
+:root {
+    --clr-primary-400: hsl(158, 36%, 37%);
+    --clr-primary-500: hsl(158, 36%, 20%);
+    --clr-secondary-200: hsl(30, 38%, 92%);
+
+  --clr-neutral-900: hsl(212, 21%, 14%);
+  --clr-neutral-400: hsl(228, 12%, 48%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
+  --ff-base: "Roboto", serif;
+  --ff-accent: "Fraunces", serif;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.7;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  line-height: 1;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* MAIN STYLES FROM HERE */
+
+body {
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  font-size: 0.875rem;
+  color: var(--clr-neutral-400);
+  background-color: var(--clr-secondary-200);
+
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  margin:1rem;
+}
+
+/* buttons */
+
+.button{
+    text-decoration: none;
+    border:0;
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .75em 1.5em;
+    display: inline-flex;
+    gap:.75rem;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-primary-400);
+    color: var(--clr-neutral-100);
+    font-weight: var(--fw-bold);
+    font-size: 0.925rem;
+}
+.button[data-icon="shopping"]::before{
+    content: '';
+    background-image: url("images/icon-cart.svg");
+    width: 15px;
+    height: 16px;
+}
+.button:is(:hover,:focus-visible){
+    background-color: var(--clr-primary-500);
+}
+
+/* Utilities styles */
+.flex-group{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+/* Product styles */
+
+.product{
+    --content-padding:1.5em;
+    --content-spacing:1em;
+    background-color: var(--clr-neutral-100);
+
+    display: grid;
+    border-radius: .5rem;
+    overflow: hidden;
+    max-width: 600px;
+}
+
+
+@media (min-width:600px) {
+    .product{
+        grid-template-columns: 1fr 1fr;
+    } 
+}
+
+
+.product__content{
+
+    display: grid;
+    gap: var(--content-spacing);
+    padding: var(--content-padding);
+
+}
+
+.product__category{
+    font-size: .8125rem;
+    text-transform: uppercase;
+    letter-spacing: .375em;
+}
+
+.product__title{
+    font-size: 2rem;
+    font-family: var(--ff-accent);
+    color: var(--clr-neutral-900); 
+}
+
+.product__price{
+    font-size: 2rem;
+    font-family: var(--ff-accent);
+    color:var(--clr-primary-400);
+    font-weight: var(--fw-bold);
+}
+.product__original-price{
+    text-decoration: line-through;
+}
