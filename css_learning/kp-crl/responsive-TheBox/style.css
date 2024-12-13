@@ -1,0 +1,205 @@
+:root {
+    --clr-icons: #929292;
+    --clr-text: #fff;
+    --clr-bg-dark: #242424;
+    --clr-bg-light: #3b3b3b;
+    --clr-accent: #ff7600;
+}
+
+/* CSS-reset */
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+
+body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/* main styling */
+body {
+    margin: 1em;
+    background-color: var(--clr-bg-dark);
+    color: var(--clr-text);
+    line-height: 1.5;
+    font-family: sans-serif;
+}
+.button {
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    color: var(--clr-text);
+    margin: 1.5rem 0;
+    font-size: 1.125rem;
+    padding: 0.5em;
+    position: relative;
+}
+
+.button::after {
+    content: "";
+    position: absolute;
+    background-color: var(--clr-accent);
+    width: 73%;
+    top: 50%;
+    left: 0;
+    height: 0.75em;
+    z-index: -1;
+    transform-origin: bottom left;
+    transition: transform 250ms cubic-bezier(0.85, -0.16, 0.54, 1.46);
+}
+
+.button:hover::after,
+.button:focus-visible::after {
+    transform: scale(1.5, 2);
+}
+
+.title {
+    color: var(--clr-accent);
+    font-size: clamp(2rem, 10vw, 7rem);
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.location {
+    color: var(--clr-icons);
+    font-size: 1.5rem;
+    margin-block-end: 1.75em;
+}
+
+header {
+    display: flex;
+    align-items: center;
+
+    margin: 2em 0;
+}
+.nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.nav__list {
+    color: var(--clr-text);
+    text-transform: capitalize;
+    text-decoration: none;
+}
+.secondary-imgaes {
+    display: flex;
+    gap: 0.5em;
+}
+
+.social-links {
+    display: flex;
+    gap: 2rem;
+}
+.social-link:hover {
+    opacity: 0.5;
+}
+
+@media (min-width: 800px) {
+    body {
+        margin: 0;
+    }
+    .main-grid {
+        display: grid;
+        grid-template-columns:
+            minmax(1em, 1fr)
+            repeat(3, minmax(10rem, 30rem))
+            minmax(1em, 1fr);
+        gap: 2rem;
+    }
+
+    header {
+        grid-column: 2 / 5;
+    }
+    main {
+        grid-column: 2/-1;
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-auto-flow: dense;
+    }
+    .title {
+        grid-column: 1/3;
+        grid-row: 1;
+    }
+    .primary-image {
+        grid-column: 2/-1;
+        z-index: -1;
+        grid-row: 1/4;
+    }
+    .secondary-imgaes {
+        grid-column: 2/3;
+    }
+    .description {
+        grid-column: 1/2;
+    }
+    .button {
+        align-self: start;
+        justify-self: start;
+    }
+
+    footer {
+        grid-column: 2/3;
+    }
+}
