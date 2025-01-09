@@ -85,10 +85,43 @@ h6 {
 }
 
 /* main styles */
-body{
+html {
+    color-scheme: dark;
+}
+body {
     font-family: var(--ff-base);
     font-size: var(--fs-400);
     font-weight: var(--fw-regular);
     line-height: 1.5;
     color: var(--clr-neutral-100);
+    background-color: var(--clr-primary-800);
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.main-grid {
+    display: grid;
+    /* this mean first col should get 15rem and rest sohuld get everything */
+    grid-template-columns: 15rem auto;
+    grid-auto-flow: dense;
+    min-height: 100vh;
+}
+
+main {
+    grid-column: 2;
+}
+aside {
+    grid-column: 1;
+}
+.job-experiecne{
+    display: grid;
+    grid-auto-flow: column;
 }
