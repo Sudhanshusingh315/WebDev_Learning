@@ -1,62 +1,61 @@
 *,
 *::before,
-*::after{
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-html{
-    color-scheme: dark light;
+:root {
+    --bg-color: hsl(0, 0%, 12%);
 }
-body{
+html {
+    color-scheme: dark light;
+    background-color: var(--bg-color);
+}
+body {
     line-height: 1.5;
 }
-.wrapper{
+.wrapper {
     max-width: 50rem;
     margin-inline: auto;
     padding-inline: 1rem;
-
+    background-color: var(--body-bg);
+    color: white;
 }
 
-.site-title{
+.site-title {
     font-size: 3rem;
-    padding:1rem;
+    padding: 1rem;
 }
 
-.section-title{
+.section-title {
     font-size: 2rem;
     line-height: 1.5;
 }
 
-section{
-    padding-block:5rem;
+section {
+    padding-block: 5rem;
 }
 
-p{
+p {
     font-size: 1.1rem;
 }
 
-.diagonal{
+.diagonal {
     /* background-image: linear-gradient(
         45deg,
         #10a4c5,
         #9548bb,
         #bf303a
     ); */
-    position:relative;
-    isolation: isolate; 
+    position: relative;
+    isolation: isolate;
 }
 
-.diagonal::after{
-    content: '';
+.diagonal::after {
+    content: "";
     width: 100%;
-    background:  linear-gradient(
-        45deg,
-        #10a4c5,
-        #9548bb,
-        #bf303a
-    );
+    background: linear-gradient(45deg, #10a4c5, #9548bb, #bf303a);
 
     position: absolute;
     inset: 0;
@@ -64,31 +63,86 @@ p{
     z-index: -1;
 }
 
-.skipes{
-    position: relative;    
-    color:black;
-    background: linear-gradient(
-        to right,
-        #fdc830,
-        #f37335
-    );
+.skipes {
+    --height-border: 50px;
+    position: relative;
+    background: linear-gradient(to right, #fdc830, #f37335);
 }
 
 .skipes::before,
-.skipes::after{
-    content: '';
+.skipes::after {
+    content: "";
     width: 100%;
+    height: var(--height-border);
     position: absolute;
-    height: 50px;
-    background-color: rebeccapurple;
-    mask-image: url('./assests/triangle.svg');
+    background: var(--bg-color);
+    -webkit-mask-image: url("./assests/test.svg");
+    -webkit-mask-size: 50px var(--height-border);
 }
 
-.skipes::after{
+.skipes::after {
     bottom: 0;
     transform: rotate(180deg);
 }
 
-.skipes::before{
-   top: 0; 
+.skipes::before {
+    top: 0;
+}
+
+.triangle {
+    --triangle-width: 50px;
+    --triangle-height: 10px;
+    position: relative;
+    /* background: rgb(2,0,36); */
+    background: linear-gradient(
+        90deg,
+        rgb(114, 108, 227) 4%,
+        rgb(173, 73, 230) 35%,
+        rgb(211, 67, 227) 72%
+    );
+}
+
+.triangle::before,
+.triangle::after {
+    content: "";
+    width: 100%;
+    height: var(--triangle-height);
+    position: absolute;
+    background-color: var(--bg-color);
+    -webkit-mask-image: url("assests/triangle.svg");
+    -webkit-mask-size: 30px 40px;
+    -webkit-mask-repeat: repeat-x;
+    mask-image: url("assests/triangle.svg");
+    mask-size: var(--triangle-width) var(--triangle-height);
+    mask-repeat: repeat-x;
+}
+.triangle::before {
+    top: 0;
+}
+.triangle:after {
+    bottom: 0;
+    transform: rotate(180deg);
+}
+
+.wavy {
+    background: linear-gradient(to right, #00f260, #0575e6);
+    /* mask created with css generator wiht mask */
+    --mask: radial-gradient(21.68px at 50% 29.45px, #000 99%, #0000 101%)
+            calc(50% - 38px) 0/76px 51% repeat-x,
+        radial-gradient(21.68px at 50% -10.45px, #0000 99%, #000 101%) 50% 19px/76px
+            calc(51% - 19px) repeat-x,
+        radial-gradient(
+                21.68px at 50% calc(100% - 29.45px),
+                #000 99%,
+                #0000 101%
+            )
+            50% 100%/76px 51% repeat-x,
+        radial-gradient(
+                21.68px at 50% calc(100% + 10.45px),
+                #0000 99%,
+                #000 101%
+            )
+            calc(50% - 38px) calc(100% - 19px) / 76px calc(51% - 19px) repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
 }
