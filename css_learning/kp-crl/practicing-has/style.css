@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    color-scheme: dark light;
+}
+body{
+    line-height: 1.5;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+.container{
+    max-width: 500px;
+    width: 80%;
+    margin-inline:auto;
+}
+
+.article_title:has(+ .article_subtitle){
+    color: lime;
+}
+
+.article_title:not(:has(+.article_subtitle)){
+    color:hotpink;
+    margin-block-end: 5rem;
+}
+
+.article_subtitle{
+    font-size: 1.5rem;
+}
+
+.image-gallery{
+
+    margin-block-start: 5rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.5rem;
+    
+}
+
+.image-gallery:has(img:hover) img{
+    transition:scale 350ms linear,
+    opacity 350ms linear;
+}
+
+.image-gallery:has(img:hover) img:hover{
+    scale:1.3;
+}
+
+.image-gallery:has(img:hover) img:not(:hover){
+    opacity: .5;
+}
