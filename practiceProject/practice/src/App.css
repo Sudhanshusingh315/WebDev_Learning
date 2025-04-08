@@ -1,0 +1,11 @@
+.star-container {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    font-size: 1.5rem;
+}
+.gold {
+    color: gold;
+}
