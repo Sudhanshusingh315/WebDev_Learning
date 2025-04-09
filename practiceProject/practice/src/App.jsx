@@ -1,38 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
+import PhotoControl from "./PhotoControl";
 
-function App({ size = 7 }) {
-    const [star, setStar] = useState(new Array(size).fill(""));
-    const [starValue, setStarValue] = useState(null);
-    const [hoverValue, setHoverValue] = useState(null);
-    console.log("star", hoverValue);
-    const handleClick = (index) => {
-        setStarValue(index);
-    };
+function App() {
+    const [photos, setPhotos] = useState(null);
+    const [pageNo, setPageNo] = useState(1);
+    useEffect(() => {
+        fetch(`https://picsum.photos/v2/list?page=${pageNo}&limit=5`)
+            .then((res) => res.json())
+            .then((res) => {
+                console.log("final response", res);
+                setPhotos(res);
+            });
+    }, [pageNo]);
+
     return (
         <>
-            <div className="star-container">
-                {star?.map((_, index) => {
+            <div className="photoGrid">
+                {photos?.map(({ id, download_url }) => {
                     return (
-                        <p
-                            onClick={() => handleClick(index + 1)}
-                            onMouseEnter={() => {
-                                setHoverValue(index + 1);
-                            }}
-                            onMouseLeave={() => {
-                                setHoverValue(0);
-                            }}
-                            className={
-                               (hoverValue === 0 && index < starValue) || index < hoverValue
-                                    ? "gold"
-                                    : ""
-                            }
-                        >
-                            &#9733;
-                        </p>
+                        <img key={id} src={download_url} alt="photo-gallery" />
                     );
                 })}
             </div>
+            {/* photos control */}
+            <PhotoControl pageNo={pageNo} setPageNo={setPageNo} />
         </>
     );
 }

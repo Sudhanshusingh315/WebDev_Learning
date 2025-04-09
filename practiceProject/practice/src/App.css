@@ -1,11 +1,30 @@
-.star-container {
-    width: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-    font-size: 1.5rem;
+img {
+    width: 10rem;
+    aspect-ratio: 1/1;
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
 }
-.gold {
-    color: gold;
+.photoGrid {
+    display: flex;
+    justify-content: space-evenly;
+
+    align-items: center;
+}
+.photo-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 1.5rem;
+    padding: 0.875rem;
+    cursor: pointer;
+}
+
+.onThisPage {
+    background-color: hotpink;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 800;
+    padding: 0.5rem;
 }
