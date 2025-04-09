@@ -1,21 +1,35 @@
-.infinitescroll {
-    width: 60%;
-    display: grid;
-    gap: 0.875rem;
+.wrapper {
+    width: 70%;
+    max-width: 1112px;
     margin-inline: auto;
-    border: 1px solid red;
+    border: 2px solid red;
+    padding-inline: 1rem;
+}
+
+.title {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
+    font-size: 1.12rem;
 }
-img {
-    width: 100%;
-    max-width: 100%;
-    display: block;
-    object-fit: cover;
+.content {
+    font-size: 1.5rem;
+    background-color: hotpink;
+    color: white;
+    font-weight: 800;
+    padding: 1.5rem;
+    display: grid;
+    animation-name: show;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-duration: 300ms;
 }
-.test {
-    width: 20rem;
-    aspect-ratio: 1/1;
+
+@keyframes show {
+    0% {
+        grid-template-rows: 0fr;
+    }
+    100% {
+        grid-template-rows: 1fr;
+    }
 }
