@@ -1,13 +1,21 @@
-.otp-fileds {
+.infinitescroll {
+    width: 60%;
+    display: grid;
+    gap: 0.875rem;
+    margin-inline: auto;
+    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60%;
-
-    input {
-        font-size: 1.5rem;
-        width: 5rem;
-        margin: 0.2rem;
-        aspect-ratio: 1/1;
-    }
+    flex-direction: column;
+}
+img {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+.test {
+    width: 20rem;
+    aspect-ratio: 1/1;
 }

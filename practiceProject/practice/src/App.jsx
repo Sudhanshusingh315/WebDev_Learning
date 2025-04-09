@@ -1,59 +1,23 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
+import { useState } from "react";
 import { useRef } from "react";
+import Photos from "./Photos";
 
-function App({ otpFileds = 6 }) {
-    const [otp, setOtps] = useState(Array(otpFileds).fill(""));
-    const otpInputRefs = useRef([]);
-    console.log("otpInput", otpInputRefs);
-    console.log("otp value", otp);
-    const hadleOtpInput = (e, index) => {
-        const { key } = e;
-        console.log(key);
-        switch (key) {
-            case "Backspace":
-                setOtps((prev) => {
-                    const temp = [...prev];
-                    temp.splice(index, 1, "");
-                    return temp;
-                });
-                if (index > 0) {
-                    otpInputRefs.current[index - 1].focus();
-                }
-                break;
+function App() {
+    const [imageData, setImagesData] = useState(null);
+    const [pageNo, setPageNo] = useState(1);
+    useEffect(() => {
+        fetch(`https://picsum.photos/v2/list?page=${pageNo}&limit=10`)
+            .then((res) => res.json())
+            .then((data) => {
+                setImagesData(data);
+            });
+    }, []);
 
-            default:
-                break;
-        }
-
-        if (isNaN(key)) return;
-
-        // figure out why didn't setOpt(prev) worked?
-        console.log("key", key);
-        const newOtp = [...otp];
-        newOtp[index] = key;
-        setOtps(newOtp);
-        if (index < otp.length - 1) {
-            otpInputRefs?.current[index + 1].focus();
-        }
-    };
     return (
         <>
-            <div className="otp-fileds">
-                {otp?.map((value, index) => {
-                    return (
-                        <input
-                            ref={(currentInput) => {
-                                otpInputRefs.current[index] = currentInput;
-                            }}
-                            key={index}
-                            value={value}
-                            type="text"
-                            onKeyDown={(e) => hadleOtpInput(e, index)}
-                        />
-                    );
-                })}
-            </div>
+            <Photos imageData={imageData} setImagesData={setImagesData} />
         </>
     );
 }
