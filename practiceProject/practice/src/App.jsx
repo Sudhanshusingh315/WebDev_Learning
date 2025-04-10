@@ -1,25 +1,33 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import "./App.css";
-import { useFormState } from "react-dom";
-import Step from "./Step";
+import Tab from "./Tabs";
 
 export default function App() {
-    const list = [<Example1 />, <Example2 />, <Example3 />, <Example4 />];
-    return <Step list={list} />;
+    const [currentTabIndex, setCurrentTabIndex] = useState(1);
+    console.log("current tab index", currentTabIndex);
+    const handleIndex = (index) => {
+        setCurrentTabIndex(index);
+    };
+    return (
+        <div>
+            <Tab currentTab={currentTabIndex} onChange={handleIndex}>
+                <Tab.HeadsContainer>
+                    <Tab.Item lable="Tab 1" index={1} />
+                    <Tab.Item lable="Tab 2" index={2} />
+                    <Tab.Item lable="Tab 3" index={3} />
+                </Tab.HeadsContainer>
+                <Tab.Container>
+                    <Tab.ContainerContent index={1}>
+                        content 1
+                    </Tab.ContainerContent>
+                    <Tab.ContainerContent index={2}>
+                        content 2
+                    </Tab.ContainerContent>
+                    <Tab.ContainerContent index={3}>
+                        content 3
+                    </Tab.ContainerContent>
+                </Tab.Container>
+            </Tab>
+        </div>
+    );
 }
-
-const Example1 = () => {
-    return <h1>Step 1</h1>;
-};
-
-const Example2 = () => {
-    return <h1>Step 2</h1>;
-};
-
-const Example3 = () => {
-    return <h1>Step 3</h1>;
-};
-
-const Example4 = () => {
-    return <h1>Step 4</h1>;
-};
