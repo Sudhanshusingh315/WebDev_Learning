@@ -1,39 +1,25 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
-import data from "./data.json";
+import { useFormState } from "react-dom";
+import Step from "./Step";
 
-function App() {
-    console.log("data", data);
-    const [show, setShow] = useState();
-    const handleAccordian = (index) => {
-        setShow(index);
-    };
-    return (
-        <div className="wrapper">
-            {data?.map(({ question, answer }, index) => {
-                return (
-                    <div
-                        className="accordian"
-                        onClick={() => {
-                            handleAccordian(index);
-                        }}
-                        key={index}
-                    >
-                        <div className="title">
-                            <h3>{question}</h3>
-                            <span>+</span>
-                        </div>
-
-                        {index === show && (
-                            <div className="content">
-                                <p>{answer}</p>
-                            </div>
-                        )}
-                    </div>
-                );
-            })}
-        </div>
-    );
+export default function App() {
+    const list = [<Example1 />, <Example2 />, <Example3 />, <Example4 />];
+    return <Step list={list} />;
 }
 
-export default App;
+const Example1 = () => {
+    return <h1>Step 1</h1>;
+};
+
+const Example2 = () => {
+    return <h1>Step 2</h1>;
+};
+
+const Example3 = () => {
+    return <h1>Step 3</h1>;
+};
+
+const Example4 = () => {
+    return <h1>Step 4</h1>;
+};
