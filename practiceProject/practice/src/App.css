@@ -1,0 +1,31 @@
+.tabs {
+    border: 2px solid red;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+    width: 80%;
+    max-width: 1112px;
+    margin-inline: auto;
+    padding: 1rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.items > * {
+    padding: 1rem;
+    border: 1px solid grey;
+    margin-block: 0.5rem;
+    background-color: pink;
+    color: purple;
+    font-size: 1.5rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.heading {
+    font-size: 1.5rem;
+    font-weight: 500;
+}

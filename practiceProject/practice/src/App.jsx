@@ -1,35 +1,77 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import "./App.css";
-import useCustomMemo from "./useCustomMemo";
+import { useRef } from "react";
 
-// custom useMmemo
+const initialData = {
+    Todo: ["Meow 1", "Meow 2", "Meow 3"],
+    Completed: ["Meow 4", "Meow 5"],
+    Pending: ["Pending hehe", "I'm Pending tooo"],
+};
+// drag and drop
 export default function App() {
-    const [counter, setCounter] = useState(0);
-    const [input, setInput] = useState("");
-    function expensiveCalculation(num) {
-        console.log("running expensive calculation");
-        for (let i = 0; i <= 100; i++) {}
-        return num * 2;
-    }
+    const [data, setData] = useState(initialData);
+    const dataRef = useRef(null);
 
-    const doubleValue = useCustomMemo(
-        () => expensiveCalculation(counter),
-        [counter]
-    );
+    const handleDragStart = (item, container) => {
+        console.log(`picked ${item} from ${container}`);
+        dataRef.current = {
+            item,
+            container,
+        };
+    };
+    const handleDrop = (dropContainer) => {
+        setData((prev) => {
+            // remove the item from container
+            const updatedValue = prev[dataRef.current.container].filter(
+                (item) => item !== dataRef.current.item
+            );
+            prev[dataRef.current.container] = updatedValue;
+
+            // add item to the dropContainer
+            return {
+                ...prev,
+                [dropContainer]: [...prev[dropContainer], dataRef.current.item],
+            };
+        });
+    };
+
+    const handledragOver = (e) => {
+        e.preventDefault();
+    };
     return (
-        <div>
-            <h2>Count: {counter}</h2>
-            <h4>Count: {doubleValue}</h4>
-            <button onClick={() => setCounter((prev) => prev + 1)}>
-                increment
-            </button>
-            <input
-                placeholder="type something"
-                value={input}
-                onChange={(e) => {
-                    setInput(e.target.value);
-                }}
-            />
+        <div className="tabs">
+            {Object.keys(data)?.map((element, index) => {
+                return (
+                    <div
+                        key={index}
+                        className="container"
+                        onDragOver={(e) => {
+                            handledragOver(e);
+                        }}
+                        onDrop={() => {
+                            handleDrop(element);
+                        }}
+                    >
+                        <div className="heading">{element}</div>
+                        {/* items */}
+                        <div className="items">
+                            {data[element].map((item, idx) => {
+                                return (
+                                    <div
+                                        key={idx}
+                                        draggable={true}
+                                        onDragStart={() =>
+                                            handleDragStart(item, element)
+                                        }
+                                    >
+                                        {item}
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                );
+            })}
         </div>
     );
 }
