@@ -1,77 +1,80 @@
 import { useState } from "react";
 import "./App.css";
-import { useRef } from "react";
-
-const initialData = {
-    Todo: ["Meow 1", "Meow 2", "Meow 3"],
-    Completed: ["Meow 4", "Meow 5"],
-    Pending: ["Pending hehe", "I'm Pending tooo"],
-};
-// drag and drop
+import userPassword from "./userPassword";
 export default function App() {
-    const [data, setData] = useState(initialData);
-    const dataRef = useRef(null);
+    const [value, setValue] = useState(4);
+    const [checkBoxData, setCheckBoxData] = useState([
+        { title: "Include uppercase letters", state: false },
+        { title: "Include lowercase letters", state: false },
+        { title: "Include numbers", state: false },
+        { title: "Include symbols", state: false },
+    ]);
 
-    const handleDragStart = (item, container) => {
-        console.log(`picked ${item} from ${container}`);
-        dataRef.current = {
-            item,
-            container,
-        };
-    };
-    const handleDrop = (dropContainer) => {
-        setData((prev) => {
-            // remove the item from container
-            const updatedValue = prev[dataRef.current.container].filter(
-                (item) => item !== dataRef.current.item
-            );
-            prev[dataRef.current.container] = updatedValue;
+    const { password, generatePassword, errorMessage } = userPassword();
 
-            // add item to the dropContainer
-            return {
-                ...prev,
-                [dropContainer]: [...prev[dropContainer], dataRef.current.item],
+    const handleCheckBoxes = (e, index) => {
+        console.log("wokring");
+        e.preventDefault();
+        setCheckBoxData((prev) => {
+            const newData = [...prev];
+            newData[index] = {
+                ...newData[index],
+                state: !newData[index].state,
             };
+            return newData;
         });
     };
 
-    const handledragOver = (e) => {
-        e.preventDefault();
+    const handleRangeValue = (e) => {
+        setValue(e.target.value);
     };
+    console.log("state of checkbox", checkBoxData);
     return (
-        <div className="tabs">
-            {Object.keys(data)?.map((element, index) => {
-                return (
-                    <div
-                        key={index}
-                        className="container"
-                        onDragOver={(e) => {
-                            handledragOver(e);
-                        }}
-                        onDrop={() => {
-                            handleDrop(element);
-                        }}
-                    >
-                        <div className="heading">{element}</div>
-                        {/* items */}
-                        <div className="items">
-                            {data[element].map((item, idx) => {
-                                return (
-                                    <div
-                                        key={idx}
-                                        draggable={true}
-                                        onDragStart={() =>
-                                            handleDragStart(item, element)
-                                        }
-                                    >
-                                        {item}
-                                    </div>
-                                );
-                            })}
+        <div className="container">
+            {/* password text and copy button */}
+            <div className="header">
+                <p>7HrT4#</p>
+                <button>copy</button>
+            </div>
+            {/* character lenght sliger */}
+            <div className="char-len">
+                <div className="char-len-info">
+                    <p>character lengh</p>
+                    <p>{value}</p>
+                </div>
+                <input
+                    min={4}
+                    max={20}
+                    type="range"
+                    value={value}
+                    onChange={handleRangeValue}
+                />
+            </div>
+            {/* checkboxes */}
+            <div className="checkbox">
+                {checkBoxData?.map(({ title, state }, index) => {
+                    return (
+                        <div className="hehe" key={index}>
+                            <input
+                                type="checkbox"
+                                checked={state}
+                                onChange={(e) => {
+                                    handleCheckBoxes(e, index);
+                                }}
+                            />
+                            <p>{title}</p>
                         </div>
-                    </div>
-                );
-            })}
+                    );
+                })}
+            </div>
+            {/* generate button */}
+            <button
+                onClick={() => {
+                    generatePassword(checkBoxData, value);
+                }}
+            >
+                Generate button
+            </button>
         </div>
     );
 }
