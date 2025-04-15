@@ -1,23 +1,23 @@
-const p1 = new Promise((resolve, reject) => {
-    console.log("working 1");
-    setTimeout(() => {
-        resolve("p1 resolved");
-    }, 6000);
-});
+const arry = [20, 41, 22, [32, 56, 89], [[123, 2, 56, 77]]];
 
-const p2 = new Promise((resolve, reject) => {
-    console.log("working 2");
-    setTimeout(() => {
-        resolve("p2 resolved");
-    }, 5000);
-});
+Array.prototype.myFlat = function (level = 1) {
+    const result = [];
 
-async function test() {
-    console.log("Start");
-    const v1 = await p1;
-    console.log(v1);
-    const v2 = await p2;
-    console.log(v2);
-}
+    function flatten(array, currentLevel) {
+        for (let i = 0; i < array.length; i++) {
+            if (Array.isArray(array[i]) && currentLevel < level) {
+                flatten(array[i], currentLevel + 1);
+            } else {
+                result.push(array[i]);
+            }
+        }
+    }
 
-test();
+    flatten(this, 0);
+
+    return result;
+};
+
+
+const data = arry.myFlat(4);
+console.log(data);
