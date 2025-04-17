@@ -1,0 +1,165 @@
+body {
+    color: white;
+    background-color: #333;
+}
+.wrapper {
+    width: 70%;
+    margin-inline: auto;
+    max-width: 1122px;
+}
+
+.speaker-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px) 60px 1fr;
+    margin-block-start: 5rem;
+    grid-template-rows: auto repeat(5, 50px) auto;
+    max-width: 800px;
+    position: relative;
+    gap: 1rem;
+    ul {
+        grid-column: 5/6;
+        grid-row: 1/8;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+    a:is(:hover, :focus) {
+        background-color: hotpink;
+        color: white;
+        font-weight: 700;
+
+        img {
+            scale: 2;
+            height: 100px;
+            aspect-ratio: 1/1;
+            z-index: 2;
+        }
+    }
+    a:not(:hover, :focus) img {
+        animation: zhack 500ms;
+    }
+    img {
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.5rem;
+        transition: 500ms;
+    }
+}
+
+@keyframes zhack {
+    0%,
+    99% {
+        z-index: 1;
+    }
+}
+
+.speaker-grid li:nth-child(3n + 1) img {
+    grid-column: 1/2;
+}
+
+.speaker-grid li:nth-child(3n + 2) img {
+    grid-column: 2/3;
+}
+.speaker-grid li:nth-child(3n + 3) img {
+    grid-column: 3/4;
+}
+
+.speaker-grid li:nth-child(-n + 3) img {
+    grid-row: 2/3;
+}
+.speaker-grid li:nth-child(n + 4):nth-child(-n + 6) img {
+    grid-row: 3 / 4;
+}
+.speaker-grid li:nth-child(n + 7):nth-child(-n + 9) img {
+    grid-row: 4/5;
+}
+.speaker-grid li:nth-child(n + 10):nth-child(-n + 12) img {
+    grid-row: 5/6;
+}
+
+.speaker-grid li:nth-child(n + 13):nth-child(-n + 15) img {
+    grid-row: 6/7;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+    }
+}
+
+body {
+    /* 4. Add accessible line-height */
+    line-height: 1.5;
+    /* 5. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+/*
+    10. Create a root stacking context
+  */
+#root,
+#__next {
+    isolation: isolate;
+}
