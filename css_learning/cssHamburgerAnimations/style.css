@@ -1,0 +1,51 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    --button-color: #333;
+}
+.example {
+    width: 90%;
+    background-color: linen;
+    margin-inline: auto;
+    border: 2px solid red;
+    min-height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+button {
+    background-color: transparent;
+    border-radius: 1rem;
+    border: 10px solid var(--button-color, #333);
+}
+
+.button-one .line {
+    transition: y 300ms ease-in 500ms, rotate 500ms ease-in, opacity 0ms 500ms;
+    transform-origin: center;
+}
+.button-one:hover .line {
+    transition: y 300ms ease-in, rotate 500ms ease-in 300ms, opacity 0ms 300ms;
+}
+
+.button-one:hover .line {
+}
+
+.button-one:hover :is(.top, .bottom) {
+    y: 45;
+}
+.button-one:hover .middle {
+    opacity: 0;
+}
+.button-one:hover .top {
+    rotate: 45deg;
+}
+
+.button-one:hover .bottom {
+    rotate: -45deg;
+}
