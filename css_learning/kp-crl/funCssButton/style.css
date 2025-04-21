@@ -23,9 +23,21 @@ body {
 }
 
 .glassy-button {
+    --_padding: 1em 1.5em;
+    --_transition-speed: 200ms;
+
+    --_hover-opacity: 0.4;
+    --_pressed-opacity: 0.15;
+    --_hover-blurriness: 5px;
+    --_pressed-blurriness: 10px;
+
+    --_hover-offset: 0.5em;
+    --_pressed-offset: 0.25em;
+
     cursor: pointer;
     font: inherit;
     font-weight: 500;
+    outline: 0;
     padding: 0;
     border: 0;
     border-radius: 1em;
@@ -39,21 +51,57 @@ body {
         inset: 0;
         background-color: var(--_surface);
         z-index: -1;
-        transition: translate 200ms;
+        transition: scale var(--_transition-speed),
+            translate var(--_transition-speed);
     }
     span {
         display: block;
-        padding: 1em 1.5em;
+        padding: var(--_padding);
+
         border-radius: inherit;
-        background-color: hsl(0, 0%, 100%);
+        background-color: hsl(0 0% 100% / 0);
+        backdrop-filter: blur(0px);
+        position: relative;
+        overflow: hidden;
+        transition: background-color var(--_transition-speed),
+            backdrop-filter var(--_transition-speed),
+            translate var(--_transition-speed);
+
+        &::before {
+            content: "";
+            inset: 0;
+            position: absolute;
+            background-image: url("data:image/svg+xml,%3C!-- svg: first layer --%3E%3Csvg viewBox='0 0 279 279' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.89' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0;
+        }
     }
     &:hover,
     &:focus-visible {
         span {
-            translate: 0 -0.5em;
+            outline: 1px solid hsl(0 0% 100% /0.5);
+            translate: 0 calc(var(--_hover-offset) * -1);
+            background-color: hsl(0 0% 100% / var(--_hover-opacity));
+            backdrop-filter: blur(--_hover-blurriness);
+
+            &::before {
+                opacity: 0.5;
+            }
         }
         &::after {
-            translate: 0 0.65em;
+            scale: 0.95;
+            translate: 0 0.125em;
+        }
+    }
+
+    &:active {
+        span {
+            translate: 0 calc(var(--_pressed-offset) * -1);
+            background-color: hsl(0 0% 100% / var(--_pressed-opacity));
+            backdrop-filter: blur(var(--_pressed-blurriness));
+        }
+        &::after {
+            scale: 0.875;
+            translate: 0 0.125em;
         }
     }
 }
