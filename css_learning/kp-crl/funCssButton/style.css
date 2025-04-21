@@ -1,0 +1,67 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    --button-text: hsl(200, 60%, 12%);
+    --button-1-surface: hsl(197, 88%, 58%);
+    --button-2-surface: hsl(41, 96%, 56%);
+}
+
+body {
+    min-height: 100vh;
+    font-size: 2rem;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(221, 37%, 10%);
+    gap: 2rem;
+}
+
+.glassy-button {
+    cursor: pointer;
+    font: inherit;
+    font-weight: 500;
+    padding: 0;
+    border: 0;
+    border-radius: 1em;
+    background-color: transparent;
+    position: relative;
+
+    &::after {
+        content: "";
+        border-radius: inherit;
+        position: absolute;
+        inset: 0;
+        background-color: var(--_surface);
+        z-index: -1;
+        transition: translate 200ms;
+    }
+    span {
+        display: block;
+        padding: 1em 1.5em;
+        border-radius: inherit;
+        background-color: hsl(0, 0%, 100%);
+    }
+    &:hover,
+    &:focus-visible {
+        span {
+            translate: 0 -0.5em;
+        }
+        &::after {
+            translate: 0 0.65em;
+        }
+    }
+}
+
+.glassy-button:nth-child(1) {
+    --_surface: var(--button-1-surface);
+}
+
+.glassy-button:nth-child(2) {
+    --_surface: var(--button-2-surface);
+}
