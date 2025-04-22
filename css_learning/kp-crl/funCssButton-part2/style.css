@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 2rem;
+    display: grid;
+    place-content: center;
+    gap: 2rem;
+    min-height: 100vh;
+    background-image: conic-gradient(
+        at 125% 50%,
+        #b78cf7,
+        #ff7c94,
+        #ffcf0d,
+        #ff7c94,
+        #b78cf7
+    );
+    font-family: system-ui;
+}
+
+.button {
+    cursor: pointer;
+    font-size: 2rem;
+    font-family: inherit;
+    font-weight: 700;
+    color: hsl(320, 40%, 40%);
+    background-color: hsl(349 100% 95%);
+    padding: 0.75em 1.25em;
+    border: 0;
+    border-radius: 1.25rem;
+}
+
+.glow-effect {
+    /* do not change used for calculations */
+    --container-offset: 100px;
+    position: relative;
+}
+
+.glow-container {
+    position: absolute;
+    inset: calc(var(--container-offset) / -2);
+    width: calc(100% + var(--container-offset));
+    height: calc(100% + var(--container-offset));
+    pointer-events: none;
+    opacity: 0;
+}
+
+.glow-blur,
+.glow-line {
+    width: calc(100% - var(--container-offset));
+    height: calc(100% - var(--container-offset));
+    rx: 1.25rem;
+    x: calc(var(--container-offset) / 2);
+    y: calc(var(--container-offset) / 2);
+    stroke-linecap: round;
+    stroke-dasharray: 20px 30px;
+    fill: transparent;
+}
+
+.glow-blur {
+    filter: blur(15px);
+    stroke: white;
+    stroke-width: 10px;
+}
+.glow-line {
+    stroke: white;
+    stroke-width: 2px;
+}
+
+.glow-effect:is(:hover, :focus) .glow-container {
+    animation: glow-visibility 1200ms ease-in;
+}
+
+.glow-effect:is(:hover, :focus) :is(.glow-blur, .glow-line) {
+    stroke-dashoffset: -65px;
+    transition: stroke-dashoffset 1200ms;
+}
+
+@keyframes glow-visibility {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    25%,
+    75% {
+        opacity: 1;
+    }
+}
