@@ -1,0 +1,96 @@
+:root {
+    --timing: 400ms;
+    --rotation: 20deg;
+}
+
+html {
+    color-scheme: dark;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    perspective: 1000px;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* background-image: url("/assets/yoda-on-dagobah.jpg"); */
+
+.yoda {
+    --_transition_time: 300ms;
+
+    width: 350px;
+    aspect-ratio: 9/16;
+    position: relative;
+    transition: rotate var(--_transition_time) ease-out;
+    transform-style: preserve-3d;
+}
+
+.yoda:hover {
+    rotate: x 20deg;
+}
+
+.yoda:hover::after {
+    transform: translateY(30px);
+}
+.yoda:hover::before {
+    opacity: 1;
+}
+.yoda::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, transparent 100px, black);
+    /* background-color: limegreen; */
+    opacity: 0;
+    transition: opacity var(--_transition_time) ease-out;
+}
+
+.yoda::after {
+    content: "";
+    position: absolute;
+    background-color: black;
+    filter: blur(1rem);
+    inset: 20px;
+    transform: translateY(0px);
+    z-index: -1;
+    transition: transform var(--_transition_time) ease-out;
+}
+
+.bg-image {
+    object-fit: cover;
+    object-position: -150px center;
+    display: block;
+    height: 100%;
+}
+
+.front-image {
+    position: absolute;
+    scale: 1;
+    transform-origin: bottom;
+    opacity: 0;
+    transition: var(--_transition_time) ease-out;
+}
+
+.yoda:hover .front-image {
+    opacity: 1;
+    transform: translateY(-40px);
+    scale: 1.25;
+}
+
+.yoda:hover .logo {
+    transform: translateY(-3rem) translateZ(20px);
+}
+.logo {
+    position: absolute;
+    width: 65%;
+    margin-inline: auto;
+    inset: auto 0 2rem;
+    filter: invert(1);
+    transition: var(--_transition_time);
+    /* transform: translateY(-3rem) translateZ(20px); */
+}
