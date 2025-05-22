@@ -1,15 +1,50 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
 }
 
 .App {
-    background-color: gray;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  color: white;
+  background-color: gray;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  padding: 0.5rem;
+}
+
+input[type="color"] {
+  padding: 0.2rem;
+}
+
+.settings {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.8rem;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  display: grid;
+  gap: 0.5rem;
+}
+
+button {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.selected-layer {
+  background-color: lightpink;
+  font-size: 1.3rem;
+  color: hotpink;
 }
