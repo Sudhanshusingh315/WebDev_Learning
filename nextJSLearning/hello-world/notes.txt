@@ -1,0 +1,6 @@
+
+1) the app has an page.tsx since maps are closely related.
+2) any folder inside the app, with a page.tsx becomes the route.
+3) nested routes. /blog and /blog/first /blog/second
+4) Dynamic routes.
+5) Nested dynamic routes. 
