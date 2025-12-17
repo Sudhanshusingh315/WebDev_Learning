@@ -1,0 +1,42 @@
+.stepper-container{
+    border: 1px solid red;
+    width: 80%;
+    margin-inline: auto;
+    position: relative;
+}
+
+.steps{
+    display: flex ;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stepper-stage{
+    width: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: lightpink;
+    color: rebeccapurple;
+    font-weight: bold;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.stepper-stage.active{
+    background-color: green;
+
+}
+
+
+.stepper-line{
+    height: 2px ;
+    width: 0%;
+    background-color: red;
+    top: 50%;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+    transition: width 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+}
