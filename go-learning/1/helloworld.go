@@ -3,9 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	var conferenceName = "Go Conference"
+	conferenceName := "Go Conference"
 	const conferenceTickets = 50
-	var remainingTickets = 50
+	var remainingTickets uint = 50
+
+	fmt.Printf("conferenceTickets is %T, remainingTickets is %T\n", conferenceTickets, remainingTickets)
 
 	fmt.Printf("welcome to %v booking application\n", conferenceName)
 
@@ -13,11 +15,37 @@ func main() {
 
 	fmt.Println("get your tickets here to attend")
 
-	var userName string
+	var bookings [50]string
 
+	bookings[0] = "Nana"
+
+	var userTickets int
+
+	var firstName string
+	var lastName string
+	var email string
 	// ask user for their name to enter
 
-	userName = "Tome"
-	fmt.Printf("userName is %v \n", userName)
+	// fmt.Scan(userNameToBe)
 
+	// ask the use for first and last name
+
+	fmt.Println("Enter your first Name")
+	fmt.Scan(&firstName)
+
+	fmt.Println("Enter your last Name")
+	fmt.Scan(&lastName)
+
+	fmt.Println("Enter your email address")
+	fmt.Scan(&email)
+
+	fmt.Println("How many tickets do you want to buy ?")
+	fmt.Scan(&userTickets)
+
+	remainingTickets = remainingTickets - uint(userTickets)
+
+	fmt.Printf("first name is %v and last name is %v, and has tickers %v\n", firstName, lastName, userTickets)
+
+	fmt.Printf("Thank you %v %v for booking tickets, you will recieve an email\n", firstName, lastName)
+	fmt.Printf("Remaining tickets are %v", remainingTickets)
 }

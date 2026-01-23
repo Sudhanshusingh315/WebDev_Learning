@@ -14,4 +14,14 @@ func main() {
 
 	var vals [4]bool
 	fmt.Println(vals)
+
+	// to declare it in single line
+	newArray := [3]int{11, 23, 4}
+	fmt.Println(newArray)
+
+	// 2d array in golang
+
+	newArray2d := [2][2]int{{3, 4}, {5, 6}}
+	fmt.Println(newArray2d)
+
 }
