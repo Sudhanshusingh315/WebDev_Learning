@@ -34,9 +34,13 @@ func main() {
 
 	// slice package bhi atta hai
 
-	var nums1 = []int{1, 2}
-	var nums2 = []int{1, 2}
+	var nums1 = []int{1, 2, 3}
+	var nums2 = []int{1, 2, 4}
 
 	fmt.Println(slices.Equal(nums1, nums2))
+
+	var nums2dslice = [][]int{{1, 2, 3}, {4, 5, 6}}
+
+	fmt.Println(nums2dslice)
 
 }
