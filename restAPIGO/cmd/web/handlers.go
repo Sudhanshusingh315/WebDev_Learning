@@ -2,13 +2,15 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"net/http"
 	"strconv"
 	"text/template"
 )
 
-func home(w http.ResponseWriter, r *http.Request) {
+// that's how you define the a method against,
+// a struct.
+
+func (app *application) home(w http.ResponseWriter, r *http.Request) {
 	// setting headers
 	w.Header().Add("Server", "Go")
 
@@ -26,20 +28,22 @@ func home(w http.ResponseWriter, r *http.Request) {
 	// path is relative to the root
 	ts, err := template.ParseFiles(files...)
 	if err != nil {
-		log.Print(err.Error())
+
+		app.logger.Error(err.Error(), "method", r.Method, "uri", r.URL.RequestURI())
+
 		http.Error(w, "Internal server errror", http.StatusInternalServerError)
 		return
 	}
 
 	err = ts.ExecuteTemplate(w, "base", nil)
 	if err != nil {
-		log.Print(err.Error())
+		app.logger.Error(err.Error(), r.Method, "uri", r.URL.RequestURI())
 		http.Error(w, "Internal server errror", http.StatusInternalServerError)
 	}
 
 }
 
-func snippetView(w http.ResponseWriter, r *http.Request) {
+func (app *application) snippetView(w http.ResponseWriter, r *http.Request) {
 	id, err := strconv.Atoi(r.PathValue("id"))
 
 	if err != nil || id < 1 {
@@ -50,11 +54,11 @@ func snippetView(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "Display a Specific snipped with ID %d", id)
 }
 
-func snippetCreate(w http.ResponseWriter, r *http.Request) {
+func (app *application) snippetCreate(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("Display a form for creating a new snippet..."))
 }
 
-func snippetCreatePost(w http.ResponseWriter, r *http.Request) {
+func (app *application) snippetCreatePost(w http.ResponseWriter, r *http.Request) {
 
 	// to send 201 status code
 
