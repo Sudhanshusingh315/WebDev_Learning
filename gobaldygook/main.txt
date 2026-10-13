@@ -1,0 +1,22 @@
+3 searching in VIM
+
+1 built into vim are several ways to search for text, all must be accessed from normal mode.
+1 / will allow us to search in a forwrd direction from where we currently are
+2 n will find the next occurrence of that word before wrapping around
+3 N will find the previous occurrence of that word before wrapping around
+
+4 ? allows us to search in a backward direction from where we currently are
+5 n will find the next BACKWARD occurrence of that word (flipped from its usage in /)
+6 N will find the previous BACKWARD occurrence of the word (flipped from its usage in ?)
+7 // will repeat the previous back search (same idea as /)
+
+10 * will search for the next instance of the word we are currently on
+11 # will search for the previous instance of the word we are currently on
+
+13 but how do we find and replace text?
+14 :%s/find/replace/options  (g replaces globally, gi replaces globally ignoring case, gc replaces globally but prompts before each replacement)
+
+16 searching for love in all the wrong places
+17 its wrong to eat cookies after midnight
+18 windows is the wrong OS to use for programming
+19 liking a perfect circle more than Tool is just WRONG
